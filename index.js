@@ -30,6 +30,7 @@ mongoose
     res.write(`<h1>Socket IO Start on Port : ${PORT} </h1>`);
     res.end
   });
+
 var clients = {};
 const chatModel = require('./models/chat.model');
 
