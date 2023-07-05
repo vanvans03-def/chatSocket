@@ -26,10 +26,22 @@ mongoose
     }
   );
 
-  app.get('/',(req,res) =>{
-    res.write(`<h1>Socket IO Start on Port : ${PORT} </h1>`);
-    res.end
-  });
+app.get('/', (req, res) => {
+  res.write(`<h1>Socket IO Start on Port : ${PORT} </h1>
+    
+<p id="demo"></p>
+
+<script>
+setInterval(displayHello, 1000);
+
+function displayHello() {
+  document.getElementById("demo").innerHTML += "Hello";
+}
+</script>
+
+`);
+  res.end
+});
 
 var clients = {};
 const chatModel = require('./models/chat.model');
